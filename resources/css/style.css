@@ -1,0 +1,328 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.quote {
+    font-size: 0.75rem;
+}
+
+h1, h2, h3, h4, h5, p {
+    padding:0px;
+    margin:0px;
+}
+
+/*-------header elements including logo and page navigation----*/
+header {
+    background-color: white;
+    width: 100%;
+    height: 64px;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+}
+/*-------logo elements----*/
+.Logo {
+    display: flex;
+    font-size: 1.6rem;
+    font-family: sans-serif;
+    align-items: center;
+    margin-left: 24px;
+}
+#logo-icon {
+    height: 32px;
+    width: 32px;
+    object-fit: cover;
+}
+.Logo #COLMAR {
+    font-weight: bold;
+    color: black
+}
+.Logo #ACADEMY {
+    color: gray;
+}
+/*-------navigation elements----*/
+.header-nav {
+    display: flex;
+    text-decoration: none;
+    gap: 16px;
+    list-style: none;
+    margin-right: 24px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 0;
+
+    a {
+        text-decoration:  none;
+        color: black;
+    }
+}
+
+header ul {
+    margin: 0;
+}
+
+/*----main content section----------*/
+
+/*-------banner---------*/
+
+#banner {
+    display: flex;
+    align-items: center;
+    background-color: rgb(6, 183, 253, 0.3);
+
+    h1, h3 {
+        padding: 1rem 0;
+    }
+    h3 {
+        padding-bottom: 2rem;
+    }
+    img {
+        width: 60%;
+        padding: 32px 24px;
+    }
+
+    .container {
+        padding-right: 50px;
+
+        button {
+            background-color: darkslategray;
+            color: white;
+            height: 2.5rem;
+            width: 90%;
+            font-size: 1.25rem;
+        }
+    }
+}
+
+/*---------information section----------*/
+
+#info-section {
+    display: flex;
+    width: 100%;
+
+    h1, h2, h3, p {
+        margin: 0;
+    }
+}
+
+#information {
+    
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    
+    img {
+        
+        margin-top: 32px;
+        margin-left: 24px;
+        margin-right: 24px;
+    }
+
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 32px 24px;
+
+        p {
+            padding-top: 24px;
+        }
+    }
+}
+
+#info-links {
+    padding-top: 14px;
+    margin-top: 2px;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    border-left: 1px solid rgba(0,0,0,0.3);
+
+    .link-container {
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-top: 1px solid gray;
+        border-bottom: 1px solid gray;
+        margin-bottom: 1px;
+
+        img {
+            width: 35%;
+            height: auto;
+            padding: 16px;
+        }
+
+        .container {
+            width: 65%;
+            align-items: center;
+            
+            p {
+                margin-top: 8px;
+            }
+        }
+    }
+
+    #highlight-event {
+            background-color: rgb(165, 165, 165, 0.5);
+        }
+}
+
+/*--------------courses-section-------------*/
+
+#courses-section {
+    h1, h3, p, h5 {
+        padding:0;
+        margin:0;
+    }
+   
+    h1 {
+        font-size: 1.75rem;
+        text-align: center;
+        font-weight: bold;
+        padding-top: 32px;
+        padding-bottom: 32px;
+    }
+
+    h3 {
+        padding-top: 16px; padding-bottom: 16px;
+    }
+
+    h5 {
+        padding-top:8px; padding-bottom: 8px;
+    }
+
+    p {
+        padding-bottom: 24px;
+    }
+
+    img {
+        height: auto;
+    }
+
+    padding-left: 72px;
+    padding-right: 72px;
+
+    background-color: rgb(6, 183, 253, 0.3);
+
+    .tiles-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 32px;
+        justify-content: space-evenly;
+        padding-bottom: 32px;
+
+        .course-container {
+            img {
+                height: auto;
+                width: 100%;
+            }
+
+            background-color: white;
+            width: 31%;
+        }
+
+        .container {
+            padding-left: 16px; padding-right: 16px;
+
+        }
+    }
+}
+
+/*--------------thesis section--------------*/
+
+#thesis-header {
+    text-align: center;
+    padding-top: 32px;
+    padding-bottom: 32px;
+    width: 100%;
+}
+
+#thesis-main {
+    
+    display: flex;
+    width: 100%;
+    padding-bottom: 32px;
+    
+    #thesis-left {
+        width: 60%;
+        padding-left: 24px;
+        padding-right: 24px;
+
+        video {
+            width: 100%;
+            padding-bottom: 24px;
+        }
+
+        h3 {
+            padding-bottom: 8px;
+        }
+
+        p {
+            font-size: 1rem;
+        }
+    }
+    
+
+    #thesis-links {
+    padding-top: 0px;
+    margin-top: 2px;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+
+    .link-container {
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img {
+            width: 35%;
+            height: auto;
+            padding: 16px;
+        }
+
+        .container {
+            width: 65%;
+            align-items: center;
+            padding-right: 16px;
+            
+            p {
+                margin-top: 8px;
+            }
+        }
+    }
+
+    #highlight-link {
+            background-color: rgb(165, 165, 165, 0.5);
+        }
+    }
+}
+
+/*----------footer elements including copyright and legal navigation----*/
+footer {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 24px; padding-right: 24px;
+    margin: 0 5px;
+    padding-top: 16px;
+    font-size: .9rem;
+    border-top: 1px solid rgb(155, 155, 155, 0.5);
+    padding-bottom:32px;
+
+    p {
+        margin:0;
+    }
+}
