@@ -32,6 +32,7 @@ header {
     display: flex;
     justify-content: space-between;
     margin: 0;
+
 }
 /*-------logo elements----*/
 .Logo {
@@ -63,9 +64,16 @@ header {
     font-family: Arial, Helvetica, sans-serif;
     margin-top: 0;
 
+    
+
     a {
-        text-decoration:  none;
+        text-decoration: none;
         color: black;
+        transition: text-decoration 0.3s ease;
+    }
+
+    a:hover{
+        text-decoration: underline;
     }
 }
 
@@ -81,7 +89,7 @@ header ul {
     display: flex;
     align-items: center;
     background-color: rgb(6, 183, 253, 0.3);
-
+    
     h1, h3 {
         padding: 1rem 0;
     }
@@ -91,17 +99,30 @@ header ul {
     img {
         width: 60%;
         padding: 32px 24px;
+        transition: filter 0.3s ease;
+        
+    }
+
+    img:hover {
+        filter: brightness(1.1) contrast(1.05) hue-rotate(60deg);
     }
 
     .container {
         padding-right: 50px;
+        text-align: center;
 
         button {
             background-color: darkslategray;
             color: white;
             height: 2.5rem;
-            width: 90%;
+            width: 80%;
             font-size: 1.25rem;
+            transition: transform 0.3s ease;
+        }
+
+        button:hover {
+            transform: scale(1.05);
+            box-shadow: 4px 8px 8px rgba(0,0,0,0.2);
         }
     }
 }
@@ -158,6 +179,8 @@ header ul {
         border-bottom: 1px solid gray;
         margin-bottom: 1px;
 
+        transition: background-color 0.3s ease;
+
         img {
             width: 35%;
             height: auto;
@@ -174,9 +197,10 @@ header ul {
         }
     }
 
-    #highlight-event {
+    .link-container:hover {
             background-color: rgb(165, 165, 165, 0.5);
-        }
+    }
+
 }
 
 /*--------------courses-section-------------*/
@@ -224,13 +248,24 @@ header ul {
         padding-bottom: 32px;
 
         .course-container {
+            
             img {
                 height: auto;
                 width: 100%;
             }
 
             background-color: white;
+            border-radius: 2px;
+            border-color: black;
+            box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
             width: 31%;
+
+            transition: box-shadow 0.3s ease, transform 0.3s ease;
+        }
+
+        .course-container:hover {
+            box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+            transform: scale(1.03);
         }
 
         .container {
@@ -273,9 +308,9 @@ header ul {
             font-size: 1rem;
         }
     }
-    
+}    
 
-    #thesis-links {
+#thesis-links {
     padding-top: 0px;
     margin-top: 2px;
     width: 40%;
@@ -287,6 +322,7 @@ header ul {
         display: flex;
         justify-content: center;
         align-items: center;
+        transition: background-color 0.3s ease;
 
         img {
             width: 35%;
@@ -305,10 +341,10 @@ header ul {
         }
     }
 
-    #highlight-link {
+    .link-container:hover {
             background-color: rgb(165, 165, 165, 0.5);
-        }
     }
+
 }
 
 /*----------footer elements including copyright and legal navigation----*/
