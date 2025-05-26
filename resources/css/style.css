@@ -1,364 +1,728 @@
+/* ---------- Global Reset & Base Styles ---------- */
+
+/* Use border-box sizing for all elements */
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
+/* Base styles for the root HTML element */
 html {
-    font-size: 16px;
-    font-family: sans-serif;
-    margin: 0;
-    padding: 0;
+  font-size: 16px;
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
+/* Base body settings */
 body {
+  margin: 0;
+  padding: 0;
+}
+
+/* Small text block, used for citations or quotes */
+.quote {
+  font-size: 0.75rem;
+}
+
+/* Remove padding and margin from all headings and paragraphs */
+h1, h2, h3, h4, h5, p {
+  padding: 0;
+  margin: 0;
+}
+
+/* ---------- Header Section ---------- */
+
+/* Header layout container */
+header {
+  background-color: white;
+  width: 100%;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0;
+}
+
+/* ---------- Logo Elements ---------- */
+
+/* Flex container for the logo text and icon */
+.Logo {
+  display: flex;
+  font-size: 1.6rem;
+  font-family: sans-serif;
+  align-items: center;
+  margin-left: 24px;
+}
+
+/* Logo image styling */
+.logo-icon {
+  height: 32px;
+  width: 32px;
+  object-fit: cover;
+}
+
+/* Bold styling for "COLMAR" part of the logo */
+.Logo #COLMAR {
+  font-weight: bold;
+  color: black;
+}
+
+/* Gray color for "ACADEMY" part of the logo */
+.Logo #ACADEMY {
+  color: gray;
+}
+
+/* ---------- Desktop Navigation ---------- */
+
+/* Main header navigation menu */
+.header-nav {
+  display: flex;
+  gap: 16px;
+  list-style: none;
+  margin-right: 24px;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-top: 0;
+}
+
+/* Remove default list padding/margin */
+header ul {
+  margin: 0;
+  padding: 0;
+}
+
+/* Navigation links style */
+.header-nav a {
+  text-decoration: none;
+  color: black;
+  transition: text-decoration 0.3s ease;
+}
+
+/* Underline on hover */
+.header-nav a:hover {
+  text-decoration: underline;
+}
+
+/* Hide mobile nav by default on large screens */
+.mobile-nav {
+  display: none;
+}
+
+/* ---------- Mobile Responsive Navigation ---------- */
+
+@media only screen and (max-width: 600px) {
+  /* Hide desktop logo and nav on small screens */
+  .Logo,
+  .header-nav {
+    display: none;
+  }
+
+  /* Show mobile nav bar */
+  .mobile-nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    width: 100%;
+    gap: 50px;
+    list-style: none;
     margin: 0;
     padding: 0;
-}
+  }
 
-.quote {
-    font-size: 0.75rem;
-}
+  /* Ensure nav itself is reset */
+  nav {
+    margin: 0;
+    padding: 0;
+  }
 
-h1, h2, h3, h4, h5, p {
-    padding:0px;
-    margin:0px;
-}
-
-/*-------header elements including logo and page navigation----*/
-header {
-    background-color: white;
+  /* Adjust header layout for mobile */
+  header {
     width: 100%;
-    height: 64px;
+    justify-content: space-evenly;
     align-items: center;
-    display: flex;
-    justify-content: space-between;
-    margin: 0;
-
-}
-/*-------logo elements----*/
-.Logo {
-    display: flex;
-    font-size: 1.6rem;
-    font-family: sans-serif;
-    align-items: center;
-    margin-left: 24px;
-}
-#logo-icon {
-    height: 32px;
-    width: 32px;
-    object-fit: cover;
-}
-.Logo #COLMAR {
-    font-weight: bold;
-    color: black
-}
-.Logo #ACADEMY {
-    color: gray;
-}
-/*-------navigation elements----*/
-.header-nav {
-    display: flex;
-    text-decoration: none;
-    gap: 16px;
-    list-style: none;
-    margin-right: 24px;
-    font-family: Arial, Helvetica, sans-serif;
-    margin-top: 0;
-
-    
-
-    a {
-        text-decoration: none;
-        color: black;
-        transition: text-decoration 0.3s ease;
-    }
-
-    a:hover{
-        text-decoration: underline;
-    }
+  }
 }
 
-header ul {
-    margin: 0;
-}
 
 /*----main content section----------*/
 
-/*-------banner---------*/
+/* ------- Banner Section -------- */
 
 #banner {
-    display: flex;
-    align-items: center;
-    background-color: rgb(6, 183, 253, 0.3);
-    
-    h1, h3 {
-        padding: 1rem 0;
-    }
-    h3 {
-        padding-bottom: 2rem;
-    }
-    img {
-        width: 60%;
-        padding: 32px 24px;
-        transition: filter 0.3s ease;
-        
-    }
-
-    img:hover {
-        filter: brightness(1.1) contrast(1.05) hue-rotate(60deg);
-    }
-
-    .container {
-        padding-right: 50px;
-        text-align: center;
-
-        button {
-            background-color: darkslategray;
-            color: white;
-            height: 2.5rem;
-            width: 80%;
-            font-size: 1.25rem;
-            transition: transform 0.3s ease;
-        }
-
-        button:hover {
-            transform: scale(1.05);
-            box-shadow: 4px 8px 8px rgba(0,0,0,0.2);
-        }
-    }
+  /* Main banner layout: horizontal flex container with centered items */
+  display: flex;
+  align-items: center;
+  background-color: rgba(6, 183, 253, 0.3); /* Light blue translucent background */
 }
 
-/*---------information section----------*/
-
-#info-section {
-    display: flex;
-    width: 100%;
-
-    h1, h2, h3, p {
-        margin: 0;
-    }
+#banner h1,
+#banner h3 {
+  /* Top and bottom padding for banner text */
+  padding: 1rem 0;
 }
 
-#information {
-    
-    display: flex;
+#banner h3 {
+  /* Extra space below h3 to separate it visually */
+  padding-bottom: 2rem;
+}
+
+#banner img {
+  /* Banner image settings: scales to 60% width, adds spacing around it */
+  width: 60%;
+  padding: 32px 24px;
+  transition: filter 0.3s ease; /* Smooth transition for hover effect */
+}
+
+#banner img:hover {
+  /* Fun visual effect on hover: brightens, adds contrast, rotates hue */
+  filter: brightness(1.1) contrast(1.05) hue-rotate(60deg);
+}
+
+#banner .container {
+  /* Text and button wrapper inside the banner */
+  padding-right: 50px;
+  text-align: center; /* Center-aligns the text inside the container */
+}
+
+#banner .container button {
+  /* Primary call-to-action button inside the banner */
+  background-color: darkslategray;
+  color: white;
+  height: 2.5rem;
+  width: 80%;
+  font-size: 1.25rem;
+  transition: transform 0.3s ease; /* Button enlarges slightly on hover */
+}
+
+#banner .container button:hover {
+  /* Subtle lift effect on button hover for interactivity */
+  transform: scale(1.05);
+  box-shadow: 4px 8px 8px rgba(0, 0, 0, 0.2); /* Adds soft shadow */
+}
+
+
+
+@media only screen and (max-width: 600px) {
+  /* Banner layout for mobile view */
+  #banner {
     flex-direction: column;
-    width: 60%;
-    
-    img {
-        
-        margin-top: 32px;
-        margin-left: 24px;
-        margin-right: 24px;
-    }
-
-    .container {
-        display: flex;
-        flex-wrap: wrap;
-        margin: 32px 24px;
-
-        p {
-            padding-top: 24px;
-        }
-    }
-}
-
-#info-links {
-    padding-top: 14px;
-    margin-top: 2px;
-    width: 40%;
-    display: flex;
-    flex-direction: column;
-    border-left: 1px solid rgba(0,0,0,0.3);
-
-    .link-container {
-
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border-top: 1px solid gray;
-        border-bottom: 1px solid gray;
-        margin-bottom: 1px;
-
-        transition: background-color 0.3s ease;
-
-        img {
-            width: 35%;
-            height: auto;
-            padding: 16px;
-        }
-
-        .container {
-            width: 65%;
-            align-items: center;
-            
-            p {
-                margin-top: 8px;
-            }
-        }
-    }
-
-    .link-container:hover {
-            background-color: rgb(165, 165, 165, 0.5);
-    }
-
-}
-
-/*--------------courses-section-------------*/
-
-#courses-section {
-    h1, h3, p, h5 {
-        padding:0;
-        margin:0;
-    }
-   
-    h1 {
-        font-size: 1.75rem;
-        text-align: center;
-        font-weight: bold;
-        padding-top: 32px;
-        padding-bottom: 32px;
-    }
-
-    h3 {
-        padding-top: 16px; padding-bottom: 16px;
-    }
-
-    h5 {
-        padding-top:8px; padding-bottom: 8px;
-    }
-
-    p {
-        padding-bottom: 24px;
-    }
-
-    img {
-        height: auto;
-    }
-
-    padding-left: 72px;
-    padding-right: 72px;
-
-    background-color: rgb(6, 183, 253, 0.3);
-
-    .tiles-container {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 32px;
-        justify-content: space-evenly;
-        padding-bottom: 32px;
-
-        .course-container {
-            
-            img {
-                height: auto;
-                width: 100%;
-            }
-
-            background-color: white;
-            border-radius: 2px;
-            border-color: black;
-            box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
-            width: 31%;
-
-            transition: box-shadow 0.3s ease, transform 0.3s ease;
-        }
-
-        .course-container:hover {
-            box-shadow: 0 8px 16px rgba(0,0,0,0.3);
-            transform: scale(1.03);
-        }
-
-        .container {
-            padding-left: 16px; padding-right: 16px;
-
-        }
-    }
-}
-
-/*--------------thesis section--------------*/
-
-#thesis-header {
     text-align: center;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* Banner image: full width, no padding */
+  #banner img {
+    width: 100%;
+    padding: 0;
+  }
+
+  /* Container inside the banner */
+  #banner .container {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 0;
+    padding-left: 16px;
+    padding-right: 16px;
     padding-top: 32px;
     padding-bottom: 32px;
+  }
+
+  /* h1 inside banner container: no padding/margin, left-aligned text */
+  #banner .container h1 {
+    padding: 0;
+    margin: 0;
+    line-height: 3rem;
+    text-align: left;
+    padding-bottom: 32px;
+  }
+
+  /* h3 inside banner container: similar styling */
+  #banner .container h3 {
+    padding: 0;
+    margin: 0;
+    line-height: 2rem;
+    text-align: left;
+    padding-bottom: 24px;
+  }
+
+  /* Button inside banner container: full width */
+  #banner .container button {
     width: 100%;
+  }
 }
 
-#thesis-main {
-    
-    display: flex;
+
+/* --------- Information Section Container ---------- */
+#info-section {
+  display: flex;
+  width: 100%;
+}
+
+/* Remove default margin from all headers and paragraphs inside #info-section */
+#info-section h1,
+#info-section h2,
+#info-section h3,
+#info-section p {
+  margin: 0;
+}
+
+/* --------- Left Side: Main Info Area ---------- */
+#information {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+}
+
+/* Image inside #information */
+#information img {
+  margin-top: 32px;
+  margin-left: 24px;
+  margin-right: 24px;
+}
+
+/* Container for text blocks inside #information */
+#information .container {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 32px 24px;
+}
+
+/* Paragraphs inside #information container */
+#information .container p {
+  padding-top: 24px;
+}
+
+/* --------- Responsive Image Handling ---------- */
+
+/* Show only on desktop */
+.info-img-desktop {
+  display: flex;
+}
+
+/* Hide on desktop; show on mobile with media queries */
+.info-img-mobile {
+  display: none;
+}
+
+/* Image wrapper for sizing */
+.img-container-info {
+  padding: 0;
+  margin: 0;
+  width: 35%;
+}
+
+/* --------- Right Side: Info Links Section ---------- */
+#info-links {
+  padding-top: 14px;
+  margin-top: 2px;
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  border-left: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+/* Individual clickable link container */
+#info-links .link-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 1px solid gray;
+  border-bottom: 1px solid gray;
+  margin-bottom: 1px;
+  transition: background-color 0.3s ease;
+}
+
+/* Image inside each link container */
+#info-links .link-container img {
+  width: 100%;
+  height: auto;
+  padding: 16px;
+}
+
+/* Text content container inside link */
+#info-links .link-container .container {
+  width: 65%;
+  align-items: center;
+}
+
+/* Paragraph inside container within link */
+#info-links .link-container .container p {
+  margin-top: 8px;
+}
+
+/* Hover effect for each link container */
+#info-links .link-container:hover {
+  background-color: rgba(165, 165, 165, 0.5);
+}
+
+@media only screen and (max-width: 600px) {
+  /* Remove outer spacing from the entire info section */
+  #info-section {
+    padding: 0;
+    margin: 0;
+  }
+
+  /* Hide the left-side #information content on mobile */
+  #information {
+    display: none;
+  }
+
+  /* Expand the info-links section to full width on mobile */
+  #info-links {
+    padding: 0;
+    margin: 0;
     width: 100%;
-    padding-bottom: 32px;
-    
-    #thesis-left {
-        width: 60%;
-        padding-left: 24px;
-        padding-right: 24px;
-
-        video {
-            width: 100%;
-            padding-bottom: 24px;
-        }
-
-        h3 {
-            padding-bottom: 8px;
-        }
-
-        p {
-            font-size: 1rem;
-        }
-    }
-}    
-
-#thesis-links {
-    padding-top: 0px;
-    margin-top: 2px;
-    width: 40%;
     display: flex;
     flex-direction: column;
+    border: none;
+  }
 
-    .link-container {
-
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        transition: background-color 0.3s ease;
-
-        img {
-            width: 35%;
-            height: auto;
-            padding: 16px;
-        }
-
-        .container {
-            width: 65%;
-            align-items: center;
-            padding-right: 16px;
-            
-            p {
-                margin-top: 8px;
-            }
-        }
-    }
-
-    .link-container:hover {
-            background-color: rgb(165, 165, 165, 0.5);
-    }
-
-}
-
-/*----------footer elements including copyright and legal navigation----*/
-footer {
+  /* Style for each individual link card */
+  #info-links .link-container {
     display: flex;
-    justify-content: space-between;
-    padding-left: 24px; padding-right: 24px;
-    margin: 0 5px;
-    padding-top: 16px;
-    font-size: .9rem;
-    border-top: 1px solid rgb(155, 155, 155, 0.5);
-    padding-bottom:32px;
+    flex-direction: column;
+    align-items: center;
+    border: none;
+    margin-bottom: 1px;
+    padding: 16px;
+    width: 100%;
+    transition: background-color 0.3s ease;
+  }
 
-    p {
-        margin:0;
-    }
+  /* Image wrapper with controlled height and cropping */
+  #info-links .link-container .img-container-info {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* Hide desktop-only images */
+  .info-img-desktop {
+    display: none;
+  }
+
+  /* Show mobile-optimized images */
+  .info-img-mobile {
+    display: flex;
+  }
+
+  /* Image inside each link: responsive, cropped, and centered */
+  #info-links .link-container .img-container-info img {
+    width: 500px;
+    height: 200px;
+    max-width: 100%;
+    max-height: 100%;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 0;
+    margin: 0;
+    object-fit: cover;
+    object-position: center;
+    image-rendering: auto;
+  }
+
+  /* Content area below the image in each link */
+  #info-links .link-container .container {
+    width: 100%;
+    align-items: center;
+    padding: 16px;
+  }
+
+  /* Paragraph styling within the link content area */
+  #info-links .link-container .container p {
+    margin-top: 8px;
+  }
+
+  /* Background hover effect for link containers */
+  #info-links .link-container:hover {
+    background-color: rgba(165, 165, 165, 0.5);
+  }
 }
+
+
+/* -------------- Courses Section (Desktop) -------------- */
+
+#courses-section {
+  padding-left: 72px;
+  padding-right: 72px;
+  background-color: rgba(6, 183, 253, 0.3);
+}
+
+/* Reset padding/margin for all text elements inside #courses-section */
+#courses-section h1,
+#courses-section h3,
+#courses-section h5,
+#courses-section p {
+  padding: 0;
+  margin: 0;
+}
+
+/* Main heading styling */
+#courses-section h1 {
+  font-size: 1.75rem;
+  text-align: center;
+  font-weight: bold;
+  padding-top: 32px;
+  padding-bottom: 32px;
+}
+
+/* Subheading styling */
+#courses-section h3 {
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+
+/* Small heading styling */
+#courses-section h5 {
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+/* Paragraph spacing */
+#courses-section p {
+  padding-bottom: 24px;
+}
+
+/* General image sizing */
+#courses-section img {
+  height: auto;
+}
+
+/* ------- Course Tiles Container (Desktop Grid) ------- */
+
+#courses-section .tiles-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  justify-content: space-evenly;
+  padding-bottom: 32px;
+}
+
+/* Individual course card */
+#courses-section .tiles-container .course-container {
+  background-color: white;
+  border-radius: 2px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  width: 31%;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+/* Course card image */
+#courses-section .tiles-container .course-container img {
+  height: auto;
+  width: 100%;
+}
+
+/* Hover effect for course card */
+#courses-section .tiles-container .course-container:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  transform: scale(1.03);
+}
+
+/* Inner content padding inside course card */
+#courses-section .tiles-container .container {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+/* Hide mobile tiles by default on desktop */
+#courses-section .mobile-tiles {
+  display: none;
+}
+
+/* -------------- Responsive Mobile Layout -------------- */
+
+@media only screen and (max-width: 600px) {
+  /* Reset padding/margin on the section for small screens */
+  #courses-section {
+    padding: 0;
+    margin: 0;
+    padding-bottom: 32px;
+  }
+
+  /* Enlarge heading size slightly on mobile */
+  #courses-section h1 {
+    font-size: 2.2rem;
+  }
+
+  /* Hide desktop tiles on mobile */
+  #courses-section .tiles-container {
+    display: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  /* Show mobile-optimized course list */
+  #courses-section .mobile-tiles {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  /* Mobile-friendly course tile */
+  #courses-section .mobile-tiles .mobile-course-tile {
+    background-color: white;
+    width: 100%;
+    height: 58px;
+    padding-left: 16px;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+  }
+
+  /* Course name text inside mobile tile */
+  #courses-section .mobile-tiles .mobile-course-tile .course-name {
+    padding-top: 16px;
+    padding-bottom: 16px;
+    margin: 0;
+  }
+}
+
+
+/* -------------- Thesis Section Header -------------- */
+
+/* Centered title section above thesis content */
+#thesis-header {
+  text-align: center;
+  padding-top: 32px;
+  padding-bottom: 32px;
+  width: 100%;
+}
+
+/* -------------- Thesis Main Content Layout -------------- */
+
+#thesis-main {
+  display: flex;
+  width: 100%;
+  padding-bottom: 32px;
+}
+
+/* Left side of thesis section (video + text) */
+#thesis-main #thesis-left {
+  width: 60%;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+/* Responsive video styling */
+#thesis-main #thesis-left video {
+  width: 100%;
+  padding-bottom: 24px;
+}
+
+/* Heading inside thesis text */
+#thesis-main #thesis-left h3 {
+  padding-bottom: 8px;
+}
+
+/* Paragraph styling inside thesis section */
+#thesis-main #thesis-left p {
+  font-size: 1rem;
+}
+
+/* -------------- Thesis Link Section (Right Side) -------------- */
+
+#thesis-links {
+  padding-top: 0;
+  margin-top: 2px;
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Individual resource/link container */
+#thesis-links .link-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s ease;
+}
+
+/* Image inside each thesis link */
+#thesis-links .link-container img {
+  width: 35%;
+  height: auto;
+  padding: 16px;
+}
+
+/* Text container inside each link */
+#thesis-links .link-container .container {
+  width: 65%;
+  align-items: center;
+  padding-right: 16px;
+}
+
+/* Paragraph inside the link text block */
+#thesis-links .link-container .container p {
+  margin-top: 8px;
+}
+
+/* Hover background effect on each thesis link */
+#thesis-links .link-container:hover {
+  background-color: rgba(165, 165, 165, 0.5);
+}
+
+/* -------------- Thesis Section: Mobile Styles -------------- */
+
+@media only screen and (max-width: 600px) {
+  /* Hide descriptive text on small screens */
+  #thesis-left-text {
+    display: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  /* Hide resource links on mobile */
+  #thesis-links {
+    display: none;
+  }
+
+  /* Adjust video sizing on mobile */
+  #thesis-main video {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+  }
+
+  /* Make thesis-left span full width on small screens */
+  #thesis-main #thesis-left {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+/* -------------- Footer Section -------------- */
+
+/* Main footer layout with copyright and links */
+footer {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 24px;
+  padding-right: 24px;
+  margin: 0 5px;
+  padding-top: 16px;
+  padding-bottom: 32px;
+  font-size: 0.9rem;
+  border-top: 1px solid rgba(155, 155, 155, 0.5);
+}
+
+/* Remove spacing around footer text */
+footer p {
+  margin: 0;
+}
+
+/* Remove border on small screens for cleaner mobile view */
+@media only screen and (max-width: 600px) {
+  footer {
+    border: none;
+  }
+}
+
